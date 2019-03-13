@@ -9,7 +9,22 @@ module.exports = function configure(environment, options) {
             path: path.resolve('dist')
         },
         plugins: [
-            new MetadataExtractorWebpackPlugin()
+            new MetadataExtractorWebpackPlugin({
+                outputFileName: 'some-other-dude.json',
+
+                captureInit: () => {
+                    // this code is runs in browser, don't use `closure` :)
+                    window.captures = {};
+                    window.customElements.define = (componentName, componentClass) => {
+                        window.captures[componentName] = componentClass;
+                    };
+
+                },
+                captureExtract: () =>  {
+                    // this code is runs in browser, don't use `closure` :)
+                    return window.captures
+                }
+            })
         ]
 
     }

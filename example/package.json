@@ -1,6 +1,10 @@
 {
   "name": "runtime-metadata-extractor-webpack-plugin-example",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha",
+  "description": "A plugin for webpack that extracts runtime metadata from a bundle",
+  "main": "dist/dude.js",
+  "author": "Tiberiu CORBU",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.js --mode=production",
     "build-debug-windows": "node %NODE_DEBUG_OPTION% ./node_modules/webpack-cli/bin/cli.js --config webpack.config.js --mode=production"

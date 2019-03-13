@@ -4,10 +4,14 @@ const crypto = require('crypto')
 
 class MetadataExtractorWebpackPlugin {
 
+    constructor(options) {
+        this.options = options;
+    }
+
     async captureCustomElements(asset) {
         const source = asset.source();
         await this.page.goto(`data:text/html,<script>${source}</script>`, {waitUntil: 'networkidle2'});
-        const customElements = (await this.page.evaluate(() => window.captures));
+        const customElements = await this.page.evaluate(this.options.captureExtract);
         return customElements;
     }
 
@@ -37,12 +41,7 @@ class MetadataExtractorWebpackPlugin {
         this.content = '';
         this.browser = await puppeteer.launch();
         this.page = await this.browser.newPage();
-        this.page.evaluateOnNewDocument(() => {
-            window.captures = {};
-            window.customElements.define = (componentName, componentClass) => {
-                window.captures[componentName] = componentClass;
-            };
-        });
+        this.page.evaluateOnNewDocument(this.options.captureInit);
     };
 
     async apply(compiler) {
@@ -57,13 +56,13 @@ class MetadataExtractorWebpackPlugin {
                 this.hasher = crypto.createHash('md5');
                 this.hasher.update(this.content);
                 resultCompilation.assets = {
-                    'metadata.json': {
+                    [this.options.outputFileName]: {
                         content: this.content,
                         hash: this.hasher.digest('hex'),
                         size: this.content.length,
                         source: () => this.content
                     }
-                }
+                };
 
                 compiler.emitAssets(resultCompilation, callback);
             }

@@ -3,8 +3,12 @@
   "version": "0.0.1-alpha",
   "description": "A plugin for webpack that extracts runtime metadata from a bundle",
   "main": "src/index.js",
-  "author": "",
+  "type": "src/index.d.ts",
+  "author": "Tiberiu CORBU",
   "license": "MIT",
+  "maintainers": [
+    "Tiberiu CORBU <hello@tiberiucorbu.ro> @tiberiucorbu"
+  ],
   "dependencies": {
     "puppeteer": "^1.13.0"
   },
