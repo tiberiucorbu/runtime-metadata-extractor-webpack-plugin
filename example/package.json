@@ -1,0 +1,13 @@
+{
+  "name": "runtime-metadata-extractor-webpack-plugin-example",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --mode=production",
+    "build-debug-windows": "node %NODE_DEBUG_OPTION% ./node_modules/webpack-cli/bin/cli.js --config webpack.config.js --mode=production"
+  },
+  "devDependencies": {
+    "runtime-metadata-extractor-webpack-plugin": "../",
+    "webpack": "4.29.6",
+    "webpack-cli": "3.2.3"
+  }
+}

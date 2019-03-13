@@ -1,11 +1,14 @@
 {
-  "name": "arbitrary-require-webpack-plugin",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "runtime-metadata-extractor-webpack-plugin",
+  "version": "0.0.1-alpha",
+  "description": "A plugin for webpack that extracts runtime metadata from a bundle",
+  "main": "src/index.js",
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.13.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.29.6"
+  }
 }
