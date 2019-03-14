@@ -6,17 +6,17 @@ This produces a similar output with the records but contains more meaningful inf
 
 One can use this metadata to : 
     
-    - load bundles based their contents
-    - map your components to various packages in documents
-    - advance linting
+- load bundles based their contents
+- map your components to various packages in documents
+- advance linting
 
 ### My TODO list :
 
-    - Find meaningfull names (names can change)
-    - Assert options
-    - Add types
-    - Run a browser instance per build and not per asset 
-    
+- Find meaningfull names (names can change)
+- Assert options
+- Add types
+- Run a browser instance per build and not per asset 
+
 ## How to use ? 
 
 Install as a npm dependency
@@ -107,5 +107,5 @@ produces a json that contains :
 
 ## For the hackers
 
-    Did you knew that the url can be actualy a whole page: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs
+Did you knew that the url can be actualy a whole page: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs
     
