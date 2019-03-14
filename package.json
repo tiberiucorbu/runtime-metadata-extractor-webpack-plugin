@@ -1,6 +1,6 @@
 {
   "name": "runtime-metadata-extractor-webpack-plugin",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "description": "A plugin for webpack that extracts runtime metadata from a bundle",
   "keywords": [
     "build-tool", "metadata-extraction", "webpack", "webpack-plugin"
